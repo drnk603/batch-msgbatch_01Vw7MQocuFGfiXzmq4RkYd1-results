@@ -98,9 +98,9 @@
     class FormValidator {
         constructor() {
             this.patterns = {
-                name: /^[a-zA-ZÀ-ÿs-']{2,50}$/,
-                email: /^[^s@]+@[^s@]+.[^s@]+$/,
-                phone: /^[+-ds()]{10,20}$/,
+                name: /^[a-zA-ZÀ-ÿ\s-']{2,50}$/,
+                email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                phone: /^[+\-\d\s()]{10,20}$/,
                 message: /^.{10,}$/s
             };
             this.init();
@@ -552,26 +552,3 @@
     window.__app = app;
 
 })();
-# CSS Additions
-
-.u-no-scroll {
-  overflow: hidden;
-}
-
-@media (max-width: 767px) {
-  .navbar-nav {
-    height: calc(100vh - var(--nav-h));
-  }
-}
-
-.c-form__group.error .c-form__input,
-.c-form__group.error .c-form__textarea {
-  border-color: #dc2626;
-  animation: shake 0.4s ease-in-out;
-}
-
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  75% { transform: translateX(10px); }
-}
